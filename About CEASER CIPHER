@@ -1,0 +1,83 @@
+Caesar Cipher Encryption and Brute Force Decryption
+This repository contains a C program that demonstrates the implementation of the Caesar Cipher encryption technique and brute force decryption.
+
+The Caesar Cipher is one of the oldest and simplest encryption techniques. In this program, you can:
+
+Encrypt a plaintext message using a Caesar Cipher.
+Decrypt a Caesar Cipher encrypted message using a brute-force approach that tries all possible keys (0-25).
+
+Features:
+
+Caesar Cipher Encryption: Encrypts a message by shifting each letter in the plaintext by a given key.
+Caesar Cipher Decryption: Decrypts an encrypted message using a given key.
+Brute Force Decryption: Attempts to decrypt the message by trying all possible key values from 0 to 25 (because there are 26 possible shifts in the Caesar Cipher).
+How the Code Works:
+
+1. Encryption (ceaser_encrypt function)
+Takes a plaintext string and a key (shift value) as input.
+Shifts each character in the plaintext by the key (only for uppercase letters A-Z).
+Non-alphabetic characters (such as spaces or punctuation) are not modified.
+Outputs the encrypted text.
+
+2. Decryption (ceaser_decrypt function)
+Takes an encrypted ciphertext and a key as input.
+Reverses the encryption by shifting each character in the ciphertext back by the key (only for uppercase letters A-Z).
+Non-alphabetic characters are not modified.
+Outputs the decrypted text.
+
+3. Brute Force Attack (brute_force function)
+Tries all 26 possible keys (from 0 to 25) to decrypt the ciphertext.
+Prints the decrypted message for each key, so the user can check if one of the decrypted outputs is the correct plaintext.
+
+Usage Instructions
+
+Prerequisites:
+A C compiler (e.g., GCC) to compile and run the program.
+
+Steps:
+Clone this repository:
+git clone https://github.com/your-username/caesar-cipher.git
+
+Navigate to the project directory:
+cd caesar-cipher
+
+Compile the program:
+gcc -o caesar_cipher caesar_cipher.c
+
+Run the program:
+bash
+./caesar_cipher
+
+Follow the prompts:
+
+Enter a plaintext message (only uppercase letters are supported).
+Enter a key (an integer between 0 and 25).
+The program will display the encrypted text and attempt a brute-force decryption by trying all 26 possible keys.
+
+Example
+Sample Run:
+less
+
+Enter the plaintext (UPPER CASE ONLY): HELLO
+Enter the Key (0-25) : 3
+Encrypted Text: KHOOR
+
+Attempting brute_force attack
+Decrypting : ciphertext[0]='K', decrypted_text[0]='A' 
+Decrypting : ciphertext[1]='H', decrypted_text[1]='B' 
+Decrypting : ciphertext[2]='O', decrypted_text[2]='C' 
+Decrypting : ciphertext[3]='O', decrypted_text[3]='D' 
+Decrypting : ciphertext[4]='R', decrypted_text[4]='E' 
+Key 0: KHOOR
+Decrypting : ciphertext[0]='K', decrypted_text[0]='L' 
+Decrypting : ciphertext[1]='H', decrypted_text[1]='M' 
+Decrypting : ciphertext[2]='O', decrypted_text[2]='N' 
+Decrypting : ciphertext[3]='O', decrypted_text[3]='P' 
+Decrypting : ciphertext[4]='R', decrypted_text[4]='Q' 
+Key 1: LMPQP
+..furthe upto 25
+
+Notes:
+The program only supports uppercase letters in the plaintext.
+For brute force, it assumes the ciphertext is only composed of uppercase letters.
+The decryption results are printed for each key in the brute-force attempt, allowing you to see all possible decryptions.
